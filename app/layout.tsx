@@ -3,16 +3,37 @@ import localFont from "next/font/local";
 import Script from "next/script";
 import "./globals.css";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
-const montserrat = localFont({
-  src: "../public/fonts/Montserrat/Montserrat-VariableFont_wght.ttf",
-  variable: "--font-montserrat",
+const poppins = localFont({
+  src: [
+    { path: "../public/fonts/Poppins/Poppins-Thin.ttf", weight: "100" },
+    { path: "../public/fonts/Poppins/Poppins-ExtraLight.ttf", weight: "200" },
+    { path: "../public/fonts/Poppins/Poppins-Light.ttf", weight: "300" },
+    { path: "../public/fonts/Poppins/Poppins-Regular.ttf", weight: "400" },
+    { path: "../public/fonts/Poppins/Poppins-Medium.ttf", weight: "500" },
+    { path: "../public/fonts/Poppins/Poppins-SemiBold.ttf", weight: "600" },
+    { path: "../public/fonts/Poppins/Poppins-Bold.ttf", weight: "700" },
+    { path: "../public/fonts/Poppins/Poppins-ExtraBold.ttf", weight: "800" },
+    { path: "../public/fonts/Poppins/Poppins-Black.ttf", weight: "900" },
+    { path: "../public/fonts/Poppins/Poppins-ThinItalic.ttf", weight: "100", style: "italic" },
+    { path: "../public/fonts/Poppins/Poppins-ExtraLightItalic.ttf", weight: "200", style: "italic" },
+    { path: "../public/fonts/Poppins/Poppins-LightItalic.ttf", weight: "300", style: "italic" },
+    { path: "../public/fonts/Poppins/Poppins-Italic.ttf", weight: "400", style: "italic" },
+    { path: "../public/fonts/Poppins/Poppins-MediumItalic.ttf", weight: "500", style: "italic" },
+    { path: "../public/fonts/Poppins/Poppins-SemiBoldItalic.ttf", weight: "600", style: "italic" },
+    { path: "../public/fonts/Poppins/Poppins-BoldItalic.ttf", weight: "700", style: "italic" },
+    { path: "../public/fonts/Poppins/Poppins-ExtraBoldItalic.ttf", weight: "800", style: "italic" },
+    { path: "../public/fonts/Poppins/Poppins-BlackItalic.ttf", weight: "900", style: "italic" },
+  ],
+  variable: "--font-poppins",
   display: "swap",
 });
 
 const onest = localFont({
   src: "../public/fonts/Onest/Onest-VariableFont_wght.ttf",
   variable: "--font-onest",
+  weight: "100 900",
   display: "swap",
 });
 
@@ -29,7 +50,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${montserrat.variable} ${onest.variable} h-full antialiased`}
+      className={`${poppins.variable} ${onest.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
@@ -50,6 +71,7 @@ export default function RootLayout({
         />
         <Header />
         <main className="flex-1 flex flex-col">{children}</main>
+        <Footer />
       </body>
     </html>
   );

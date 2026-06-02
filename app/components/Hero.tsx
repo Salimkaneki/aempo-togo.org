@@ -13,6 +13,10 @@ interface HeroProps {
     showSubtitle?: boolean;
     bannerText?: string;       // Prop pour changer le texte du paragraphe
     bannerCtaText?: string;    // Prop pour changer le texte du bouton
+    imageSrc?: string;         // Prop pour changer l'image de fond
+    subtitleText?: string;     // Prop pour changer le sous-titre
+    titleText?: string;        // Prop pour changer le titre principal
+    imagePosition?: string;    // Prop pour ajuster la position de l'image (object-center, object-top, etc.)
 }
 
 export default function Hero({ 
@@ -20,7 +24,11 @@ export default function Hero({
     variant = "home", 
     showSubtitle = true,
     bannerText = "L'excellence médicale togolaise commence ici. Rejoignez le réseau officiel des étudiants en Médecine, Pharmacie et Dentaire pour innover, s'engager et bâtir ensemble l'avenir de la santé au Togo.",
-    bannerCtaText = "Nous rejoindre"
+    bannerCtaText = "Nous rejoindre",
+    imageSrc = "/images/hero-image.jpeg",
+    subtitleText = "AEMPO-TOGO",
+    titleText = "L'EXCELLENCE MÉDICALE TOGOLAISE COMMENCE ICI.",
+    imagePosition = "object-center"
 }: HeroProps) {
     const router = useRouter();
 
@@ -41,10 +49,12 @@ export default function Hero({
             {/* Background Image Container */}
             <div className="relative w-full flex-1">
                 <Image
-                    src="/images/hero-image.jpeg"
+                    src={imageSrc}
                     alt="AEMPO Togo Students"
                     fill
-                    className="object-cover"
+                    sizes="100vw"
+                    loading="eager"
+                    className={`object-cover ${imagePosition}`}
                     priority
                 />
                 
@@ -64,13 +74,13 @@ export default function Hero({
                                 Retour
                             </button>
                         ) : (
-                            <p className="text-[24px] font-bold text-white mb-2 uppercase tracking-wide">
-                                AEMPO-TOGO
+                            <p className="text-[24px] font-semibold text-white mb-2 uppercase tracking-wide">
+                                {subtitleText}
                             </p>
                         )}
 
-                        <h1 className="text-4xl md:text-[56px] font-onest font-bold text-white leading-[1.1] max-w-[1320px] uppercase">
-                            L'EXCELLENCE MÉDICALE TOGOLAISE COMMENCE ICI.
+                        <h1 className="text-4xl md:text-[56px] font-onest font-bold text-white leading-[1.1] max-w-330 uppercase">
+                            {titleText}
                         </h1>
                     </div>
                 </div>
@@ -80,12 +90,12 @@ export default function Hero({
             {showBanner && (
                 <div className="bg-[#103a22] w-full">
                     <div className={`${CONTAINER_CLASS} py-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6`}>
-                        <p className="text-white text-base max-w-4xl font-poppins font-light leading-relaxed">
+                        <p className="text-white text-2xl max-w-5xl font-montserrat font-light leading-relaxed">
                             {bannerText} {/* Texte dynamique */}
                         </p>
-                        <button className="flex items-center gap-3 bg-[#eff7f1] text-[#0b321a]  text-lg px-6 py-3 shrink-0 hover:bg-white transition-colors">
+                        <button className="flex items-center gap-3 bg-[#eff7f1] text-[#0b321a]  text-2xl p-4 shrink-0 hover:bg-white transition-colors">
                             {bannerCtaText} {/* Texte du bouton dynamique */}
-                            <ArrowUpRight weight="bold" size={20} />
+                            <ArrowUpRight weight="bold" size={24} />
                         </button>
                     </div>
                 </div>

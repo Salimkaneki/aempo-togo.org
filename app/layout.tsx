@@ -5,28 +5,20 @@ import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
-const poppins = localFont({
+const montserrat = localFont({
   src: [
-    { path: "../public/fonts/Poppins/Poppins-Thin.ttf", weight: "100" },
-    { path: "../public/fonts/Poppins/Poppins-ExtraLight.ttf", weight: "200" },
-    { path: "../public/fonts/Poppins/Poppins-Light.ttf", weight: "300" },
-    { path: "../public/fonts/Poppins/Poppins-Regular.ttf", weight: "400" },
-    { path: "../public/fonts/Poppins/Poppins-Medium.ttf", weight: "500" },
-    { path: "../public/fonts/Poppins/Poppins-SemiBold.ttf", weight: "600" },
-    { path: "../public/fonts/Poppins/Poppins-Bold.ttf", weight: "700" },
-    { path: "../public/fonts/Poppins/Poppins-ExtraBold.ttf", weight: "800" },
-    { path: "../public/fonts/Poppins/Poppins-Black.ttf", weight: "900" },
-    { path: "../public/fonts/Poppins/Poppins-ThinItalic.ttf", weight: "100", style: "italic" },
-    { path: "../public/fonts/Poppins/Poppins-ExtraLightItalic.ttf", weight: "200", style: "italic" },
-    { path: "../public/fonts/Poppins/Poppins-LightItalic.ttf", weight: "300", style: "italic" },
-    { path: "../public/fonts/Poppins/Poppins-Italic.ttf", weight: "400", style: "italic" },
-    { path: "../public/fonts/Poppins/Poppins-MediumItalic.ttf", weight: "500", style: "italic" },
-    { path: "../public/fonts/Poppins/Poppins-SemiBoldItalic.ttf", weight: "600", style: "italic" },
-    { path: "../public/fonts/Poppins/Poppins-BoldItalic.ttf", weight: "700", style: "italic" },
-    { path: "../public/fonts/Poppins/Poppins-ExtraBoldItalic.ttf", weight: "800", style: "italic" },
-    { path: "../public/fonts/Poppins/Poppins-BlackItalic.ttf", weight: "900", style: "italic" },
+    {
+      path: "../public/fonts/Montserrat/Montserrat-VariableFont_wght.ttf",
+      weight: "100 900",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/Montserrat/Montserrat-Italic-VariableFont_wght.ttf",
+      weight: "100 900",
+      style: "italic",
+    },
   ],
-  variable: "--font-poppins",
+  variable: "--font-montserrat",
   display: "swap",
 });
 
@@ -50,10 +42,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${poppins.variable} ${onest.variable} h-full antialiased`}
+      className={`${montserrat.variable} ${onest.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col" suppressHydrationWarning>
+      <body className="min-h-full flex flex-col font-montserrat" suppressHydrationWarning>
         <Script
           id="theme-script"
           strategy="beforeInteractive"

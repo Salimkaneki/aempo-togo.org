@@ -38,11 +38,12 @@ export default function Hero({
 }: HeroProps) {
     const router = useRouter();
 
-    // 1. Hauteur responsive de l'image selon la variante (la bannière s'écoule en dessous)
-    const imageHeightClass =
-        variant === "page"
-            ? "h-[240px] sm:h-[300px] md:h-[355px]"
-            : "h-[68vh] md:h-[calc(100vh-80px)]";
+    // 1. Le conteneur (image + bannière) occupe la hauteur de l'écran en "home" ;
+    //    hauteur fixe en "page". L'image prend l'espace restant (flex-1).
+    let heightClass = "h-[calc(100vh-80px)]";
+    if (variant === "page") {
+        heightClass = showBanner ? "min-h-[485px]" : "min-h-[355px]";
+    }
 
     // 2. Gestion de l'overlay (Dégradé pour "home", opacité 45% pour "page")
     const overlayClass = variant === "home"
@@ -50,9 +51,9 @@ export default function Hero({
         : "bg-black/45";
 
     return (
-        <section className="w-full flex flex-col">
+        <section className={`${heightClass} w-full flex flex-col`}>
             {/* Background Image Container */}
-            <div className={`relative w-full ${imageHeightClass}`}>
+            <div className="relative w-full flex-1">
                 <Image
                     src={imageSrc}
                     alt="AEMPO Togo Students"

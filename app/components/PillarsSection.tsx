@@ -24,10 +24,10 @@ export default function PillarsSection() {
   return (
     <section className="w-full bg-primary-light py-20">
       <div className={CONTAINER}>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8 w-fit mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-260 mx-auto">
           
           {/* Title Area (Top Left) */}
-          <div className="flex items-center w-full md:w-125">
+          <div className="flex items-center">
             <SectionTitle className="lg:text-[40px] leading-[1.2] text-primary uppercase w-full">
               LES PILIERS DE NOTRE ENGAGEMENT.
             </SectionTitle>
@@ -37,7 +37,7 @@ export default function PillarsSection() {
           {PILLARS_DATA.map((pillar) => {
             const Icon = pillar.icon;
             return (
-              <div key={pillar.title} className="bg-white p-7 md:p-8 flex flex-col justify-center w-full md:w-125 min-h-55">
+              <div key={pillar.title} className="bg-white p-7 md:p-8 flex flex-col justify-center w-full min-h-55">
                 <div className="flex items-center justify-between mb-4 text-muted">
                   <h3 className="text-[36px] md:text-[40px] font-onest font-medium">
                     {pillar.title}

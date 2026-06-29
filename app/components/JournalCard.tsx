@@ -26,7 +26,7 @@ export default function JournalCard({
   const isGrid = layout === "grid";
   const isLight = theme === "light";
 
-  const className = `${isGrid ? "w-full" : "w-[600px] shrink-0 snap-start"} flex flex-col group cursor-pointer`;
+  const className = `${isGrid ? "w-full" : "w-[85vw] sm:w-120 lg:w-150 shrink-0 snap-start"} flex flex-col group cursor-pointer`;
 
   const content = (
     <>

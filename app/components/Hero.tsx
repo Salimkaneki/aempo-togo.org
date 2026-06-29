@@ -9,7 +9,7 @@ import { CONTAINER } from "./Container";
 
 const CONTAINER_CLASS = `${CONTAINER} w-full`;
 const BANNER_CTA_CLASS =
-    "flex items-center gap-3 bg-primary-light text-primary text-2xl p-4 shrink-0 hover:bg-white transition-colors";
+    "flex items-center gap-2 md:gap-3 bg-primary-light text-primary text-lg md:text-2xl px-4 py-3 md:p-4 shrink-0 hover:bg-white transition-colors";
 
 interface HeroProps {
     showBanner?: boolean;
@@ -38,22 +38,21 @@ export default function Hero({
 }: HeroProps) {
     const router = useRouter();
 
-    // 1. Calcul dynamique de la hauteur pour le mode "page" (355px ou 485px)
-    let heightClass = "h-[calc(100vh-80px)]"; // Par défaut pour "home"
-    
-    if (variant === "page") {
-        heightClass = showBanner ? "h-[485px]" : "h-[355px]";
-    }
+    // 1. Hauteur responsive de l'image selon la variante (la bannière s'écoule en dessous)
+    const imageHeightClass =
+        variant === "page"
+            ? "h-[240px] sm:h-[300px] md:h-[355px]"
+            : "h-[68vh] md:h-[calc(100vh-80px)]";
 
     // 2. Gestion de l'overlay (Dégradé pour "home", opacité 45% pour "page")
-    const overlayClass = variant === "home" 
-        ? "bg-linear-to-t from-black/90 via-black/30 to-transparent" 
+    const overlayClass = variant === "home"
+        ? "bg-linear-to-t from-black/90 via-black/30 to-transparent"
         : "bg-black/45";
 
     return (
-        <section className={`${heightClass} w-full flex flex-col transition-all duration-300`}>
+        <section className="w-full flex flex-col">
             {/* Background Image Container */}
-            <div className="relative w-full flex-1">
+            <div className={`relative w-full ${imageHeightClass}`}>
                 <Image
                     src={imageSrc}
                     alt="AEMPO Togo Students"
@@ -68,7 +67,7 @@ export default function Hero({
                 <div className={`absolute inset-0 ${overlayClass}`}></div>
 
                 {/* Hero Text Content */}
-                <div className="absolute inset-0 flex flex-col justify-end pb-10">
+                <div className="absolute inset-0 flex flex-col justify-end pb-6 md:pb-10">
                     <div className={CONTAINER_CLASS}>
                         
                         {!showSubtitle ? (
@@ -80,12 +79,12 @@ export default function Hero({
                                 Retour
                             </button>
                         ) : (
-                            <p className="text-[24px] font-semibold text-white mb-2 uppercase tracking-wide">
+                            <p className="text-xl md:text-[24px] font-semibold text-white mb-2 uppercase tracking-wide">
                                 {subtitleText}
                             </p>
                         )}
 
-                        <h1 className="text-4xl md:text-[56px] font-onest font-bold text-white leading-[1.1] max-w-330 uppercase">
+                        <h1 className="text-3xl sm:text-4xl md:text-[56px] font-onest font-bold text-white leading-[1.1] max-w-330 uppercase">
                             {titleText}
                         </h1>
                     </div>
@@ -95,8 +94,8 @@ export default function Hero({
             {/* Bottom Green Banner */}
             {showBanner && (
                 <div className="bg-primary w-full">
-                    <div className={`${CONTAINER_CLASS} py-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6`}>
-                        <p className="text-white text-2xl max-w-5xl font-montserrat font-light leading-relaxed">
+                    <div className={`${CONTAINER_CLASS} py-6 md:py-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-5 md:gap-6`}>
+                        <p className="text-white text-base md:text-xl max-w-5xl font-montserrat font-light leading-relaxed">
                             {bannerText} {/* Texte dynamique */}
                         </p>
                         {bannerCtaHref ? (

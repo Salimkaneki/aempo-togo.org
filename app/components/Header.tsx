@@ -2,6 +2,7 @@ import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 import Image from "next/image";
 import { ROUTES } from "@/app/lib/routes";
+import MobileNav from "./MobileNav";
 
 const HEADER_LINKS = [
   { label: "À propos", href: ROUTES.about },
@@ -29,9 +30,9 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-4 md:gap-6">
           {/* SÉLECTEUR DE LANGUE */}
-          <div className="flex items-center gap-2 text-sm tracking-widest">
+          <div className="hidden sm:flex items-center gap-2 text-sm tracking-widest">
             <button className="font-medium text-zinc-900 dark:text-zinc-50 hover:text-green-700 transition-colors">
               EN
             </button>
@@ -40,9 +41,12 @@ export default function Header() {
               FR
             </button>
           </div>
-          
+
           {/* BOUTON THEME */}
           <ThemeToggle />
+
+          {/* NAV MOBILE */}
+          <MobileNav links={HEADER_LINKS} />
         </div>
       </div>
     </header>

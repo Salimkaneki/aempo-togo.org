@@ -46,8 +46,8 @@ export default function Footer() {
         <footer className="w-full font-sans text-zinc-900 bg-primary-light dark:bg-zinc-950">
             
             {/* Top Section */}
-            <div className={`${CONTAINER_CLASS} py-10 flex flex-col md:flex-row justify-between items-start md:items-center`}>
-                <div className="w-full max-w-137.5 mb-8 md:mb-0">
+            <div className={`${CONTAINER_CLASS} py-10 flex flex-col md:flex-row md:justify-between items-center`}>
+                <div className="w-full max-w-137.5 mb-8 md:mb-0 text-center md:text-left">
                     <h3 className="text-xl font-onest font-bold tracking-wide text-primary dark:text-green-500 mb-3 uppercase">
                         Soyez informé des nouvelles
                     </h3>
@@ -61,14 +61,14 @@ export default function Footer() {
                             <Image src="/icons/arrow-up-right.svg" alt="Subscribe" width={36} height={36} />
                         </button>
                     </div>
-                    <p className="text-xs font-sans text-nowrap">
+                    <p className="text-xs font-sans">
                         En cliquant sur Inscrivez-vous, vous acceptez nos Conditions générales et notre Politique de confidentialité.
                     </p>
                 </div>
 
                 {/* Réseaux Sociaux : Rendu dynamique (DRY) */}
-                <div className="flex flex-col items-start md:items-end w-full md:w-auto">
-                    <h3 className="text-xl font-onest font-normal text-primary dark:text-zinc-50 mb-3 text-right">
+                <div className="flex flex-col items-center md:items-end w-full md:w-auto">
+                    <h3 className="text-xl font-onest font-normal text-primary dark:text-zinc-50 mb-3 text-center md:text-right">
                         Suivez-nous sur
                     </h3>
                     <div className="flex gap-3">
@@ -89,7 +89,7 @@ export default function Footer() {
             {/* Middle Section */}
             <div className={`${CONTAINER_CLASS} py-12 flex flex-col lg:flex-row justify-between gap-12 lg:gap-24`}>
                 {/* Logo & Description */}
-                <div className="flex flex-col items-start lg:w-1/4">
+                <div className="flex flex-col items-center lg:items-start lg:w-1/4">
                     <div className="flex flex-col items-center w-53.75">
                         <div className="mb-8">
                             <Image src="/icons/aempo-logo.svg" alt="AEMPO Logo" width={215} height={95} />
@@ -107,8 +107,8 @@ export default function Footer() {
                 {/* Links Columns */}
                 <div className="flex-1 grid grid-cols-1 sm:grid-cols-3 gap-8 w-full max-w-3xl">
                     {FOOTER_LINKS.map((section, index) => (
-                        <div key={index} className="flex flex-col items-start sm:items-center">
-                            <div className="text-left sm:text-center">
+                        <div key={index} className="flex flex-col items-center">
+                            <div className="text-center">
                                 <h4 className="text-xl font-onest font-extrabold text-primary dark:text-zinc-50 mb-5 uppercase tracking-wide">
                                     {section.title}
                                 </h4>
@@ -129,7 +129,7 @@ export default function Footer() {
 
             {/* Bottom Bar */}
             <div className="bg-primary-mid dark:bg-[#1a3826]">
-                <div className={`${CONTAINER_CLASS} py-5 flex flex-col md:flex-row items-center justify-between text-white text-base tracking-wide`}>
+                <div className={`${CONTAINER_CLASS} py-5 flex flex-col md:flex-row items-center justify-between gap-2 text-center md:text-left text-sm md:text-base tracking-wide text-white`}>
                     <p>© 2026 AEMP-Togo - Tous droits réservés.</p>
                     <p>Conçu et développé par PEREIRA Salim (Digixel)</p>
                 </div>

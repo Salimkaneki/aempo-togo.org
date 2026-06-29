@@ -78,7 +78,7 @@ export default function About() {
             LES COMITÉS PERMANENTS
           </SectionTitle>
 
-          <div className="w-170 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center">
+          <div className="w-full max-w-170 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center">
 
             {COMMITTEES.map((item) => (
               <Committee
@@ -95,12 +95,12 @@ export default function About() {
 
       <section className="w-full  py-20">
         <div className="mx-auto max-w-360 px-6 lg:px-14 justify-center items-center flex flex-col gap-12">
-          <p className="font-sans text-3xl w-302.5 ">
+          <p className="font-sans text-2xl md:text-3xl w-full">
             Ces comités ne sont pas de simples groupes de travail : ils sont le cœur battant de l'AEMPO-TOGO.
             C’est à travers eux que nos étudiants sortent des amphithéâtres pour aller au contact direct de la population, mener des campagnes de prévention vitales et défendre farouchement l'accès aux soins pour tous.
           </p>
 
-          <h1 className="font-onest text-[180px] font-extrabold text-primary-light uppercase ">
+          <h1 className="font-onest text-7xl sm:text-9xl lg:text-[180px] font-extrabold text-primary-light uppercase leading-none wrap-break-word">
             AEMPO-TOGO
           </h1>
         </div>        

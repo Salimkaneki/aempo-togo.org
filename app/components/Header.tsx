@@ -1,22 +1,22 @@
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 import Image from "next/image";
+import { ROUTES } from "@/app/lib/routes";
 
+const HEADER_LINKS = [
+  { label: "À propos", href: ROUTES.about },
+  { label: "Actualités", href: ROUTES.news },
+  { label: "Bureau", href: ROUTES.offices },
+  { label: "Contact", href: ROUTES.contact },
+];
 
 export default function Header() {
-
-  const HEADER_LINKS = [
-    { label: "À propos", href: "/about" },
-    { label: "Actualités", href: "/news" },
-    { label: "Bureau", href: "/offices" },
-    { label: "Contact", href: "/contact" },
-  ]
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-zinc-200 bg-white font-montserrat transition-colors dark:bg-black dark:border-zinc-800">
       <div className="mx-auto flex h-20 max-w-360 items-center justify-between px-6 lg:px-12">
         {/* LOGO */}
-          <Link href="/" className="flex items-center">
+          <Link href={ROUTES.home} className="flex items-center">
           <Image src="/icons/aempo-logo.svg" alt="AEMPO Logo" width={120} height={95} style={{ height: 'auto' }} />
         </Link>
 

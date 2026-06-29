@@ -2,10 +2,14 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ArrowUpRight, ArrowLeft } from "@phosphor-icons/react/dist/ssr";
+import { CONTAINER } from "./Container";
 
-const CONTAINER_CLASS = "mx-auto w-full max-w-[1440px] px-6 lg:px-12";
+const CONTAINER_CLASS = `${CONTAINER} w-full`;
+const BANNER_CTA_CLASS =
+    "flex items-center gap-3 bg-primary-light text-primary text-2xl p-4 shrink-0 hover:bg-white transition-colors";
 
 interface HeroProps {
     showBanner?: boolean;
@@ -13,6 +17,7 @@ interface HeroProps {
     showSubtitle?: boolean;
     bannerText?: string;       // Prop pour changer le texte du paragraphe
     bannerCtaText?: string;    // Prop pour changer le texte du bouton
+    bannerCtaHref?: string;    // Si fourni, le bouton bannière devient un lien
     imageSrc?: string;         // Prop pour changer l'image de fond
     subtitleText?: string;     // Prop pour changer le sous-titre
     titleText?: string;        // Prop pour changer le titre principal
@@ -25,6 +30,7 @@ export default function Hero({
     showSubtitle = true,
     bannerText = "L'excellence médicale togolaise commence ici. Rejoignez le réseau officiel des étudiants en Médecine, Pharmacie et Dentaire pour innover, s'engager et bâtir ensemble l'avenir de la santé au Togo.",
     bannerCtaText = "Nous rejoindre",
+    bannerCtaHref,
     imageSrc = "/images/hero-image.jpeg",
     subtitleText = "AEMPO-TOGO",
     titleText = "L'EXCELLENCE MÉDICALE TOGOLAISE COMMENCE ICI.",
@@ -88,15 +94,22 @@ export default function Hero({
 
             {/* Bottom Green Banner */}
             {showBanner && (
-                <div className="bg-[#103a22] w-full">
+                <div className="bg-primary w-full">
                     <div className={`${CONTAINER_CLASS} py-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6`}>
                         <p className="text-white text-2xl max-w-5xl font-montserrat font-light leading-relaxed">
                             {bannerText} {/* Texte dynamique */}
                         </p>
-                        <button className="flex items-center gap-3 bg-[#eff7f1] text-[#0b321a]  text-2xl p-4 shrink-0 hover:bg-white transition-colors">
-                            {bannerCtaText} {/* Texte du bouton dynamique */}
-                            <ArrowUpRight weight="bold" size={24} />
-                        </button>
+                        {bannerCtaHref ? (
+                            <Link href={bannerCtaHref} className={BANNER_CTA_CLASS}>
+                                {bannerCtaText}
+                                <ArrowUpRight weight="bold" size={24} />
+                            </Link>
+                        ) : (
+                            <button className={BANNER_CTA_CLASS}>
+                                {bannerCtaText}
+                                <ArrowUpRight weight="bold" size={24} />
+                            </button>
+                        )}
                     </div>
                 </div>
             )}

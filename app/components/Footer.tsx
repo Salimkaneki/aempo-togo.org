@@ -3,24 +3,27 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowUp } from "@phosphor-icons/react/dist/ssr";
+import { ROUTES } from "@/app/lib/routes";
+import { SOCIALS } from "@/app/lib/socials";
+import { CONTAINER as CONTAINER_CLASS } from "@/app/components/Container";
 
 // 1. Centralisation de TOUTES les données (Contenu)
 const FOOTER_LINKS = [
     {
         title: "L'association",
         links: [
-            { label: "Accueil", href: "/" },
-            { label: "Historique", href: "/about" },
+            { label: "Accueil", href: ROUTES.home },
+            { label: "Historique", href: ROUTES.about },
             { label: "Missions & Visions", href: "#" },
-            { label: "Bureau Exécutif", href: "/offices" },
+            { label: "Bureau Exécutif", href: ROUTES.offices },
         ]
     },
     {
         title: "Vie Associative",
         links: [
-            { label: "Comités", href: "/offices" },
-            { label: "Actualités / Blog", href: "/news" },
-            { label: "Nous contacter", href: "/contact" },
+            { label: "Comités", href: ROUTES.offices },
+            { label: "Actualités / Blog", href: ROUTES.news },
+            { label: "Nous contacter", href: ROUTES.contact },
         ]
     },
     {
@@ -34,37 +37,27 @@ const FOOTER_LINKS = [
     }
 ];
 
-const SOCIAL_LINKS = [
-    { name: "Facebook", href: "#", icon: "/icons/facebook.svg" },
-    { name: "X", href: "#", icon: "/icons/x.svg" },
-    { name: "LinkedIn", href: "#", icon: "/icons/linkedin.svg" },
-    { name: "YouTube", href: "#", icon: "/icons/youtube.svg" },
-];
-
-// 2. Centralisation des styles structurels répétitifs
-const CONTAINER_CLASS = "mx-auto max-w-[1440px] px-6 lg:px-12";
-
 export default function Footer() {
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     return (
-        <footer className="w-full font-sans text-zinc-900 bg-[#eff7f1] dark:bg-zinc-950">
+        <footer className="w-full font-sans text-zinc-900 bg-primary-light dark:bg-zinc-950">
             
             {/* Top Section */}
             <div className={`${CONTAINER_CLASS} py-10 flex flex-col md:flex-row justify-between items-start md:items-center`}>
                 <div className="w-full max-w-137.5 mb-8 md:mb-0">
-                    <h3 className="text-xl font-onest font-bold tracking-wide text-[#1c4b31] dark:text-green-500 mb-3 uppercase">
+                    <h3 className="text-xl font-onest font-bold tracking-wide text-primary dark:text-green-500 mb-3 uppercase">
                         Soyez informé des nouvelles
                     </h3>
-                    <div className="flex w-full h-12.5 bg-[#357a55] dark:bg-green-900 overflow-hidden mb-2 font-sans">
+                    <div className="flex w-full h-12.5 bg-primary-mid dark:bg-green-900 overflow-hidden mb-2 font-sans">
                         <input
                             type="email"
                             placeholder="Entrez votre email"
-                            className="bg-[#357a55] text-[#E8F5E9]/60 placeholder-green-100 px-4 flex-1 outline-none text-sm"
+                            className="bg-primary-mid text-primary-light/60 placeholder-green-100 px-4 flex-1 outline-none text-sm"
                         />
-                        <button className="w-12.5 h-12.5 shrink-0 bg-[#0b321a] hover:bg-black transition-colors flex items-center justify-center text-white" aria-label="S'inscrire">
+                        <button className="w-12.5 h-12.5 shrink-0 bg-primary hover:bg-black transition-colors flex items-center justify-center text-white" aria-label="S'inscrire">
                             <Image src="/icons/arrow-up-right.svg" alt="Subscribe" width={36} height={36} />
                         </button>
                     </div>
@@ -75,19 +68,18 @@ export default function Footer() {
 
                 {/* Réseaux Sociaux : Rendu dynamique (DRY) */}
                 <div className="flex flex-col items-start md:items-end w-full md:w-auto">
-                    <h3 className="text-xl font-onest font-normal text-[#1c4b31] dark:text-zinc-50 mb-3 text-right">
+                    <h3 className="text-xl font-onest font-normal text-primary dark:text-zinc-50 mb-3 text-right">
                         Suivez-nous sur
                     </h3>
                     <div className="flex gap-3">
-                        {SOCIAL_LINKS.map((social, i) => (
-                            <a 
-                                key={i} 
-                                href={social.href} 
-                                aria-label={social.name}
-                                className="w-12.5 h-12.5 rounded-full border border-[#4ea977] dark:border-green-500 flex items-center justify-center hover:bg-[#4ea977] hover:text-white transition-colors"
+                        {SOCIALS.map(({ label, href, Icon }) => (
+                            <a
+                                key={label}
+                                href={href}
+                                aria-label={label}
+                                className="w-12.5 h-12.5 rounded-full border border-primary-mid dark:border-green-500 flex items-center justify-center text-primary-mid dark:text-green-500 hover:bg-primary-mid hover:text-white transition-colors"
                             >
-                                {/* Optionnel : Tu pourra   s décommenter cette ligne dès que tu auras les icônes */}
-                                {/* <Image src={social.icon} alt={social.name} width={18} height={18} /> */}
+                                <Icon size={20} />
                             </a>
                         ))}
                     </div>
@@ -104,7 +96,7 @@ export default function Footer() {
                         </div>
                         <button
                             onClick={scrollToTop}
-                            className="w-20 h-20 shrink-0 rounded-full bg-[#357a55] hover:bg-[#1a4a30] transition-colors flex items-center justify-center text-white"
+                            className="w-20 h-20 shrink-0 rounded-full bg-primary-mid hover:bg-primary transition-colors flex items-center justify-center text-white"
                             aria-label="Retour en haut"
                         >
                             <ArrowUp weight="bold" size={32} />
@@ -117,13 +109,13 @@ export default function Footer() {
                     {FOOTER_LINKS.map((section, index) => (
                         <div key={index} className="flex flex-col items-start sm:items-center">
                             <div className="text-left sm:text-center">
-                                <h4 className="text-xl font-onest font-extrabold text-[#1c4b31] dark:text-zinc-50 mb-5 uppercase tracking-wide">
+                                <h4 className="text-xl font-onest font-extrabold text-primary dark:text-zinc-50 mb-5 uppercase tracking-wide">
                                     {section.title}
                                 </h4>
                                 <ul className="flex flex-col gap-2.5 text-base text-zinc-900 dark:text-zinc-400">
                                     {section.links.map((link, linkIndex) => (
                                         <li key={linkIndex}>
-                                            <Link href={link.href} className="hover:text-[#357a55] transition-colors">
+                                            <Link href={link.href} className="hover:text-primary-mid transition-colors">
                                                 {link.label}
                                             </Link>
                                         </li>
@@ -136,7 +128,7 @@ export default function Footer() {
             </div>
 
             {/* Bottom Bar */}
-            <div className="bg-[#448b62] dark:bg-[#1a3826]">
+            <div className="bg-primary-mid dark:bg-[#1a3826]">
                 <div className={`${CONTAINER_CLASS} py-5 flex flex-col md:flex-row items-center justify-between text-white text-base tracking-wide`}>
                     <p>© 2026 AEMP-Togo - Tous droits réservés.</p>
                     <p>Conçu et développé par PEREIRA Salim (Digixel)</p>

@@ -11,6 +11,16 @@
   --font-sans: var(--font-montserrat);
   --font-montserrat: var(--font-montserrat);
   --font-onest: var(--font-onest);
+
+  /* ── Palette AEMPO-TOGO ──────────────────────────────── */
+  --color-primary: #033f1d; /* Vert foncé */
+  --color-primary-mid: #33865c; /* Vert moyen */
+  --color-primary-light: #e8f5e9; /* Vert clair (surfaces) */
+  --color-accent: #fff2d0; /* Jaune (cartes) */
+  --color-muted: #a5a5a5; /* Gris (bordures) */
+  --color-placeholder: #767676; /* Gris (placeholders) */
+  --color-surface: #fafafa; /* Blanc cassé (fonds) */
+  --color-danger: #f41515; /* Rouge (champ requis) */
 }
 
 @media (prefers-color-scheme: dark) {

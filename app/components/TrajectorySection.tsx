@@ -1,4 +1,5 @@
 import React from 'react';
+import SectionTitle from "@/app/components/SectionTitle";
 
 const TIMELINE_DATA = [
   {
@@ -47,9 +48,9 @@ export default function TrajectorySection() {
         {/* Passage à mb-24 (96px) pour l'espacement global avec la timeline */}
         <div className="flex flex-col items-center text-center mb-24 w-full max-w-264.5 mx-auto">
           
-          <h2 className="text-3xl md:text-4xl font-onest font-extrabold text-[#0e3b23] uppercase mb-3">
+          <SectionTitle className="text-primary uppercase mb-3">
             NOTRE TRAJECTOIRE
-          </h2>
+          </SectionTitle>
           
           {/* Passage à mb-24 (96px) pour l'espacement avec le paragraphe */}
           <p className="text-xl md:text-2xl font-montserrat font-medium text-black mb-24">
@@ -71,12 +72,12 @@ export default function TrajectorySection() {
           <div className="relative flex flex-col gap-12 md:gap-16">
             
             {/* Ligne Centrale */}
-            <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-[#0e3b23] -translate-x-1/2 z-0"></div>
+            <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-primary -translate-x-1/2 z-0"></div>
 
             {TIMELINE_DATA.map((item, index) => {
               const isRight = item.position === "right";
               const isGreen = item.theme === "green";
-              const bgClass = isGreen ? "bg-[#eef6f0]" : "bg-[#fdf4db]";
+              const bgClass = isGreen ? "bg-primary-light" : "bg-accent";
               
               return (
                 <div key={index} className={`relative flex items-center w-full ${isRight ? 'md:justify-end' : 'md:justify-start'}`}>
@@ -90,7 +91,7 @@ export default function TrajectorySection() {
                   )}
 
                   {/* --- LE POINT --- */}
-                  <div className="absolute left-6 md:left-1/2 w-8 h-8 rounded-full bg-[#0e3b23] border-[3px] border-[#fbfbf9] box-content -translate-x-1/2 z-20 shrink-0"></div>
+                  <div className="absolute left-6 md:left-1/2 w-8 h-8 rounded-full bg-primary border-[3px] border-[#fbfbf9] box-content -translate-x-1/2 z-20 shrink-0"></div>
                   
                   {/* Conteneur de la carte */}
                   <div className={`w-full pl-16 md:pl-0 md:w-[45%]`}>
@@ -99,10 +100,10 @@ export default function TrajectorySection() {
                       ${bgClass} p-7 md:p-8 flex flex-col justify-center min-h-40
                       ${!isRight ? 'md:items-end md:text-right text-left items-start' : 'items-start text-left'}
                     `}>
-                      <h3 className="text-xl md:text-2xl font-onest font-medium text-[#0e3b23] mb-3">
+                      <h3 className="text-xl md:text-2xl font-onest font-medium text-primary mb-3">
                         {item.year} &mdash; {item.title}
                       </h3>
-                      <p className="text-[15px] md:text-base font-montserrat font-medium text-[#1c4b31] leading-relaxed">
+                      <p className="text-[15px] md:text-base font-montserrat font-medium text-primary leading-relaxed">
                         {item.description}
                       </p>
                     </div>

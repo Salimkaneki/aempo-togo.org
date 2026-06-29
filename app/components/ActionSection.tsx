@@ -1,4 +1,6 @@
 import { Stethoscope, SquaresFour, Pill, Scroll } from "@phosphor-icons/react/dist/ssr";
+import { CONTAINER } from "@/app/components/Container";
+import SectionTitle from "@/app/components/SectionTitle";
 
 const CARDS_DATA = [
   {
@@ -45,12 +47,12 @@ const CARDS_DATA = [
 export default function ActionSection() {
   return (
     <section className="w-full bg-white py-24">
-      <div className="mx-auto max-w-360 px-6 lg:px-12 flex flex-col lg:flex-row gap-12 lg:gap-12.5 items-start">
+      <div className={`${CONTAINER} flex flex-col lg:flex-row gap-12 lg:gap-12.5 items-start`}>
         {/* Title */}
         <div className="w-full lg:w-1/3 flex items-start">
-          <h2 className="text-3xl md:text-4xl  font-onest font-extrabold text-[#0e3b23] uppercase max-w-xl">
+          <SectionTitle className="text-primary uppercase max-w-xl">
             L'AEMPO-TOGO EN ACTION
-          </h2>
+          </SectionTitle>
         </div>
 
         {/* Grid */}
@@ -59,9 +61,9 @@ export default function ActionSection() {
           {CARDS_DATA.map((card, index) => {
             const Icon = card.icon;
             const isDark = card.theme === "dark";
-            const bgClass = isDark ? "bg-[#3d8b61]" : "bg-[#fdf4db]";
-            const textClass = isDark ? "text-white" : "text-[#0e3b23]";
-            const dotClass = isDark ? "bg-white" : "bg-[#0e3b23]";
+            const bgClass = isDark ? "bg-primary-mid" : "bg-accent";
+            const textClass = isDark ? "text-white" : "text-primary";
+            const dotClass = isDark ? "bg-white" : "bg-primary";
 
             return (
               <div key={index} className={`${bgClass} ${textClass} p-6 flex items-center gap-4 min-h-40`}>

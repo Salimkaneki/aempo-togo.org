@@ -85,20 +85,22 @@ export default function Home() {
             Ils nous font confiance et nous accompagnent dans notre mission
           </p>
 
-          <div className="flex overflow-x-auto scrollbar-none gap-8">
-            {[...PARTNERS, ...PARTNERS].map((partner, idx) => (
-              <div key={idx} className="bg-white w-80 h-56.25 shrink-0 flex items-center justify-center p-6">
-                <div className="relative w-full h-full">
-                  <Image
-                    src={partner.logo}
-                    alt={partner.name}
-                    fill
-                    sizes="300px"
-                    className="object-contain"
-                  />
+          <div className="w-full max-w-full overflow-x-auto scrollbar-none pb-2">
+            <div className="flex w-max min-w-full flex-nowrap justify-start gap-4 sm:gap-6 lg:gap-8 px-1 sm:px-0">
+              {[...PARTNERS, ...PARTNERS].map((partner, idx) => (
+                <div key={idx} className="bg-white w-64 sm:w-72 lg:w-80 h-44 sm:h-52 lg:h-56 shrink-0 flex items-center justify-center p-4 sm:p-6">
+                  <div className="relative w-full h-full">
+                    <Image
+                      src={partner.logo}
+                      alt={partner.name}
+                      fill
+                      sizes="300px"
+                      className="object-contain"
+                    />
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>

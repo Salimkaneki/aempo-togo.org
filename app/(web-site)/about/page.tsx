@@ -5,19 +5,7 @@ import TrajectorySection from "@/app/components/sections/TrajectorySection";
 import Committee from "@/app/components/cards/Committee";
 import { CONTAINER } from "@/app/components/layout/Container";
 import SectionTitle from "@/app/components/ui/SectionTitle";
-
-// NOTE : textes provisoires (placeholder) — à remplacer par les contenus officiels.
-const PLACEHOLDER_DESCRIPTION =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.";
-
-const COMMITTEES = [
-  { name: "SCORA", logo: "/images/commitees/scora.svg", description: PLACEHOLDER_DESCRIPTION },
-  { name: "SCORP", logo: "/images/commitees/scorp.svg", description: PLACEHOLDER_DESCRIPTION },
-  { name: "SCOPH", logo: "/images/commitees/scoph.svg", description: PLACEHOLDER_DESCRIPTION },
-  { name: "SCOPE", logo: "/images/commitees/scope.svg", description: PLACEHOLDER_DESCRIPTION },
-  { name: "SCORE", logo: "/images/commitees/score.svg", description: PLACEHOLDER_DESCRIPTION },
-  { name: "SCOME", logo: "/images/commitees/scome.svg", description: PLACEHOLDER_DESCRIPTION },
-];
+import { COMMITTEES } from "@/app/lib/data/committees";
 
 export default function About() {
   return (
@@ -86,7 +74,7 @@ export default function About() {
 
             {COMMITTEES.map((item) => (
               <Committee
-                key={item.name}
+                key={item.id}
                 name={item.name}
                 logo={item.logo}
                 description={item.description}

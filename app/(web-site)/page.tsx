@@ -6,6 +6,7 @@ import { allArticles, getShortReadTime } from "@/app/lib/data/articles";
 import { ROUTES } from "@/app/lib/routes";
 import { CONTAINER } from "@/app/components/layout/Container";
 import SectionTitle from "@/app/components/ui/SectionTitle";
+import { PARTNERS } from "@/app/lib/data/partners";
 
 const JOURNAL_DATA = allArticles.slice(0, 3).map((a) => ({
   image: a.image,
@@ -14,17 +15,6 @@ const JOURNAL_DATA = allArticles.slice(0, 3).map((a) => ({
   title: a.title,
   excerpt: a.excerpt,
 }));
-
-const PARTNERS = [
-  {
-    name: "CNTS",
-    logo: "/icons/partners/cnts-log.svg"
-  },
-  {
-    name: "Université de Lomé (FSS)",
-    logo: "/icons/partners/univ-lome-logo.svg"
-  }
-];
 
 export default function Home() {
   return (

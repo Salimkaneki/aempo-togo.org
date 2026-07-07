@@ -33,22 +33,22 @@ export const NAV_GROUPS: NavGroup[] = [
     title: "Contenu",
     items: [
       { label: "Actualités", href: "/admin/actualites", Icon: Newspaper },
-      { label: "Bureau exécutif", href: "/admin/bureau", Icon: UsersThree, soon: true },
-      { label: "Comités", href: "/admin/comites", Icon: Buildings, soon: true },
-      { label: "Partenaires", href: "/admin/partenaires", Icon: Handshake, soon: true },
+      { label: "Bureau exécutif", href: "/admin/bureau", Icon: UsersThree },
+      { label: "Comités", href: "/admin/comites", Icon: Buildings },
+      { label: "Partenaires", href: "/admin/partenaires", Icon: Handshake },
     ],
   },
   {
     title: "Communication",
     items: [
-      { label: "Demandes d'adhésion", href: "/admin/adhesions", Icon: UserPlus, soon: true },
-      { label: "Messages", href: "/admin/messages", Icon: EnvelopeSimple, soon: true },
-      { label: "Newsletter", href: "/admin/newsletter", Icon: Megaphone, soon: true },
+      { label: "Demandes d'adhésion", href: "/admin/adhesions", Icon: UserPlus },
+      { label: "Messages", href: "/admin/messages", Icon: EnvelopeSimple },
+      { label: "Newsletter", href: "/admin/newsletter", Icon: Megaphone },
     ],
   },
   {
     title: "Système",
-    items: [{ label: "Paramètres", href: "/admin/parametres", Icon: Gear, soon: true }],
+    items: [{ label: "Paramètres", href: "/admin/parametres", Icon: Gear }],
   },
 ];
 

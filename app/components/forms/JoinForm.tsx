@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import TextInput from "./form/TextInput";
-import SelectInput from "./form/SelectInput";
-import RadioGroup from "./form/RadioGroup";
+import TextInput from "./fields/TextInput";
+import SelectInput from "./fields/SelectInput";
+import RadioGroup from "./fields/RadioGroup";
 import { createFormSubmitHandler } from "@/app/lib/forms";
 
 const BUREAUX = ["Lomé", "Kara"];

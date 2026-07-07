@@ -5,11 +5,11 @@ import {
   Archive,
   MapPin,
 } from "@phosphor-icons/react/dist/ssr";
-import Hero from "@/app/components/Hero";
-import ContactForm from "@/app/components/ContactForm";
+import Hero from "@/app/components/sections/Hero";
+import ContactForm from "@/app/components/forms/ContactForm";
 import { ROUTES } from "@/app/lib/routes";
 import { SOCIALS } from "@/app/lib/socials";
-import { CONTAINER } from "@/app/components/Container";
+import { CONTAINER } from "@/app/components/layout/Container";
 
 export const metadata: Metadata = {
   title: "Contact",

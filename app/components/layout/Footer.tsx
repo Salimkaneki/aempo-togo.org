@@ -5,7 +5,7 @@ import Image from "next/image";
 import { ArrowUp } from "@phosphor-icons/react/dist/ssr";
 import { ROUTES } from "@/app/lib/routes";
 import { SOCIALS } from "@/app/lib/socials";
-import { CONTAINER as CONTAINER_CLASS } from "@/app/components/Container";
+import { CONTAINER as CONTAINER_CLASS } from "@/app/components/layout/Container";
 
 // 1. Centralisation de TOUTES les données (Contenu)
 const FOOTER_LINKS = [

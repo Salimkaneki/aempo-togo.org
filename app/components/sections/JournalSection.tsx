@@ -2,9 +2,9 @@
 
 import { useRef, useState, useCallback } from "react";
 import { ArrowLeft, ArrowRight } from "@phosphor-icons/react/dist/ssr";
-import JournalCard from "./JournalCard";
-import { CONTAINER } from "@/app/components/Container";
-import SectionTitle from "@/app/components/SectionTitle";
+import JournalCard from "@/app/components/cards/JournalCard";
+import { CONTAINER } from "@/app/components/layout/Container";
+import SectionTitle from "@/app/components/ui/SectionTitle";
 
 interface JournalSectionProps {
   items: Array<{

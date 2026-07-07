@@ -39,3 +39,39 @@ body {
   background: var(--background);
   color: var(--foreground);
 }
+
+/* ── Animations (modal des comités) ──────────────────── */
+@keyframes overlay-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes drawer-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-overlay-in {
+  animation: overlay-in 0.2s ease-out;
+}
+
+.animate-drawer-in {
+  animation: drawer-in 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-overlay-in,
+  .animate-drawer-in {
+    animation: none;
+  }
+}

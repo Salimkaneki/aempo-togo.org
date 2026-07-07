@@ -11,7 +11,7 @@ import {
   Gear,
   SignOut,
 } from "@phosphor-icons/react/dist/ssr";
-import ThemeToggle from "@/app/components/ThemeToggle";
+import ThemeToggle from "@/app/components/ui/ThemeToggle";
 import { NAV } from "../_lib/nav";
 
 export default function Topbar({ onToggle }: { onToggle: () => void }) {

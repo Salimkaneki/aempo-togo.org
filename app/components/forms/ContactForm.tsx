@@ -1,7 +1,7 @@
 "use client";
 
-import TextInput from "./form/TextInput";
-import TextArea from "./form/TextArea";
+import TextInput from "./fields/TextInput";
+import TextArea from "./fields/TextArea";
 import { createFormSubmitHandler } from "@/app/lib/forms";
 
 export default function ContactForm() {

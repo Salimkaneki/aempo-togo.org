@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Hero from "@/app/components/Hero";
-import JoinForm from "@/app/components/JoinForm";
-import { CONTAINER } from "@/app/components/Container";
+import Hero from "@/app/components/sections/Hero";
+import JoinForm from "@/app/components/forms/JoinForm";
+import { CONTAINER } from "@/app/components/layout/Container";
 
 export const metadata: Metadata = {
   title: "Rejoindre l'AEMPO",

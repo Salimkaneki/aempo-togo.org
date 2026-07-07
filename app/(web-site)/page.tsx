@@ -1,11 +1,11 @@
 import Image from "next/image";
-import Hero from "@/app/components/Hero";
-import JournalSection from "@/app/components/JournalSection";
-import ActionSection from "@/app/components/ActionSection";
+import Hero from "@/app/components/sections/Hero";
+import JournalSection from "@/app/components/sections/JournalSection";
+import ActionSection from "@/app/components/sections/ActionSection";
 import { allArticles, getShortReadTime } from "@/app/lib/data/articles";
 import { ROUTES } from "@/app/lib/routes";
-import { CONTAINER } from "@/app/components/Container";
-import SectionTitle from "@/app/components/SectionTitle";
+import { CONTAINER } from "@/app/components/layout/Container";
+import SectionTitle from "@/app/components/ui/SectionTitle";
 
 const JOURNAL_DATA = allArticles.slice(0, 3).map((a) => ({
   image: a.image,

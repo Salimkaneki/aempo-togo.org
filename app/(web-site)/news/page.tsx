@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import Hero from "@/app/components/Hero";
-import FilterTag from "@/app/components/FilterTag";
-import JournalCard from "@/app/components/JournalCard";
+import Hero from "@/app/components/sections/Hero";
+import FilterTag from "@/app/components/ui/FilterTag";
+import JournalCard from "@/app/components/cards/JournalCard";
 import { allArticles, ARTICLE_CATEGORIES, getShortReadTime } from "@/app/lib/data/articles";
-import { CONTAINER } from "@/app/components/Container";
+import { CONTAINER } from "@/app/components/layout/Container";
 
 const FILTERS = ARTICLE_CATEGORIES;
 

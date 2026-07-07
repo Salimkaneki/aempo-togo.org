@@ -1,18 +1,22 @@
-import Hero from "@/app/components/Hero";
+import Hero from "@/app/components/sections/Hero";
 import Image from "next/image";
-import PillarsSection from "@/app/components/PillarsSection";
-import TrajectorySection from "@/app/components/TrajectorySection";
-import Committee from "@/app/components/Committee";
-import { CONTAINER } from "@/app/components/Container";
-import SectionTitle from "@/app/components/SectionTitle";
+import PillarsSection from "@/app/components/sections/PillarsSection";
+import TrajectorySection from "@/app/components/sections/TrajectorySection";
+import Committee from "@/app/components/cards/Committee";
+import { CONTAINER } from "@/app/components/layout/Container";
+import SectionTitle from "@/app/components/ui/SectionTitle";
+
+// NOTE : textes provisoires (placeholder) — à remplacer par les contenus officiels.
+const PLACEHOLDER_DESCRIPTION =
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.";
 
 const COMMITTEES = [
-  { name: "SCORA", logo: "/images/commitees/scora.svg" },
-  { name: "SCORP", logo: "/images/commitees/scorp.svg" },
-  { name: "SCOPH", logo: "/images/commitees/scoph.svg" },
-  { name: "SCOPE", logo: "/images/commitees/scope.svg" },
-  { name: "SCORE", logo: "/images/commitees/score.svg" },
-  { name: "SCOME", logo: "/images/commitees/scome.svg" },
+  { name: "SCORA", logo: "/images/commitees/scora.svg", description: PLACEHOLDER_DESCRIPTION },
+  { name: "SCORP", logo: "/images/commitees/scorp.svg", description: PLACEHOLDER_DESCRIPTION },
+  { name: "SCOPH", logo: "/images/commitees/scoph.svg", description: PLACEHOLDER_DESCRIPTION },
+  { name: "SCOPE", logo: "/images/commitees/scope.svg", description: PLACEHOLDER_DESCRIPTION },
+  { name: "SCORE", logo: "/images/commitees/score.svg", description: PLACEHOLDER_DESCRIPTION },
+  { name: "SCOME", logo: "/images/commitees/scome.svg", description: PLACEHOLDER_DESCRIPTION },
 ];
 
 export default function About() {
@@ -85,6 +89,7 @@ export default function About() {
                 key={item.name}
                 name={item.name}
                 logo={item.logo}
+                description={item.description}
               />
             ))}
             

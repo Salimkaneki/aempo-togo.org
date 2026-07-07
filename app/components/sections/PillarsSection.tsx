@@ -1,6 +1,6 @@
 import { Lightbulb, Target, Handshake } from "@phosphor-icons/react/dist/ssr";
-import { CONTAINER } from "@/app/components/Container";
-import SectionTitle from "@/app/components/SectionTitle";
+import { CONTAINER } from "@/app/components/layout/Container";
+import SectionTitle from "@/app/components/ui/SectionTitle";
 
 const PILLARS_DATA = [
   {

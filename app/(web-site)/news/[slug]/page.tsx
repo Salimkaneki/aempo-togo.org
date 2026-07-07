@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
-import JournalCard from "@/app/components/JournalCard";
+import JournalCard from "@/app/components/cards/JournalCard";
 import {
   allArticles,
   getArticleBySlug,
@@ -12,8 +12,8 @@ import {
 export function generateStaticParams() {
   return allArticles.map((article) => ({ slug: article.slug }));
 }
-import { CONTAINER } from "@/app/components/Container";
-import SectionTitle from "@/app/components/SectionTitle";
+import { CONTAINER } from "@/app/components/layout/Container";
+import SectionTitle from "@/app/components/ui/SectionTitle";
 
 // ─── Page component ───────────────────────────────────────────────────────────
 

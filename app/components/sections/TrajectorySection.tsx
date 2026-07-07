@@ -1,5 +1,5 @@
 import React from 'react';
-import SectionTitle from "@/app/components/SectionTitle";
+import SectionTitle from "@/app/components/ui/SectionTitle";
 
 const TIMELINE_DATA = [
   {

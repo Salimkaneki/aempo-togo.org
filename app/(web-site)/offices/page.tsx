@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import MemberCard from "@/app/components/MemberCard";
+import MemberCard from "@/app/components/cards/MemberCard";
 import { BUREAUS, BUREAU_INTRO } from "@/app/lib/data/bureau";
-import { CONTAINER } from "@/app/components/Container";
+import { CONTAINER } from "@/app/components/layout/Container";
 
 export const metadata: Metadata = {
   title: "Bureau exécutif",

@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ArrowUpRight, ArrowLeft } from "@phosphor-icons/react/dist/ssr";
-import { CONTAINER } from "./Container";
+import { CONTAINER } from "@/app/components/layout/Container";
 
 const CONTAINER_CLASS = `${CONTAINER} w-full`;
 const BANNER_CTA_CLASS =

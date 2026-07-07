@@ -1,9 +1,9 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import TextInput from "@/app/components/form/TextInput";
-import TextArea from "@/app/components/form/TextArea";
-import SelectInput from "@/app/components/form/SelectInput";
+import TextInput from "@/app/components/forms/fields/TextInput";
+import TextArea from "@/app/components/forms/fields/TextArea";
+import SelectInput from "@/app/components/forms/fields/SelectInput";
 import { ARTICLE_CATEGORIES, type Article } from "@/app/lib/data/articles";
 
 const CATEGORIES = ARTICLE_CATEGORIES.filter((c) => c !== "Tout voir");

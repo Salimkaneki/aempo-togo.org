@@ -13,6 +13,7 @@ import {
 } from "@phosphor-icons/react/dist/ssr";
 import ThemeToggle from "@/app/components/ui/ThemeToggle";
 import { NAV } from "../_lib/nav";
+import { logout } from "@/app/(auth)/login/actions";
 
 export default function Topbar({ onToggle }: { onToggle: () => void }) {
   const pathname = usePathname();
@@ -120,9 +121,14 @@ export default function Topbar({ onToggle }: { onToggle: () => void }) {
                 <Gear size={16} /> Paramètres
               </button>
               <div className="border-t border-zinc-100 my-1" />
-              <button className="w-full flex items-center gap-2.5 px-3 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors">
-                <SignOut size={16} /> Déconnexion
-              </button>
+              <form action={logout}>
+                <button
+                  type="submit"
+                  className="w-full flex items-center gap-2.5 px-3 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors"
+                >
+                  <SignOut size={16} /> Déconnexion
+                </button>
+              </form>
             </div>
           )}
         </div>
